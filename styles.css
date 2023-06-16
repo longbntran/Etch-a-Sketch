@@ -1,0 +1,39 @@
+@media (max-width: 400px) {
+    .container {
+      display: block;
+    }
+  }
+* {
+ margin: 0;   
+}
+.container {
+    border: solid 1px black;
+    width: 99%;
+    height: 99%;
+}
+.row {
+    display: flex;
+}
+.square {
+    align-self: center;
+    flex-shrink: 1;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+/* .square:hover {
+    cursor: pointer;
+    background-color: #ddd;
+} */
+.active {
+    background-color:blueviolet;
+}
+button {
+    background-color: #faebb6;
+    font-size: 25px;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px auto;
+}
