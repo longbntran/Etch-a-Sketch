@@ -1,23 +1,8 @@
-// function createButton () {
-//     let button = document.createElement('button');
-//     button.classList.add('button');
-//     button.innerText = 'Set Grid Size';
-//     document.body.appendChild(button);
-//     button.addEventListener('click', start, {once: true} );
-// }
-// function createResetButton () {
-//     let button = document.createElement('button');
-//     button.classList.add('button');
-//     button.innerText = 'Reset Grid Size';
-//     document.body.appendChild(button);
-//     button.addEventListener('click', reset );
-// }
 function reset () {
     return window.location.reload();
 }
 // create container 
 function setGridContainer (size) {
-    // window.location.reload();
     const container = document.createElement('div');
     container.classList.add('container');
     container.id = 'grid';

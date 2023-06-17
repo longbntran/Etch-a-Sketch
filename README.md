@@ -21,3 +21,6 @@ Requirements:
     Research button tags in HTML and how you can make a JavaScript function run when one is clicked.
     Also check out prompts.
     You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
+Extra: 
+    Rather than a simple color change from black to white, each interaction should randomize the square’s RGB value entirely.
+    Additionally, implement a progressive darkening effect where each interaction adds 10% more black or color to the square. The objective is to achieve a completely black square only after ten interactions.
