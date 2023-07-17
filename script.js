@@ -7,12 +7,22 @@ function initContainer (pixel = 16) {
     container.style.display = "grid";
     container.style.width = "500px";
     container.style.height = "500px";
+    // console.log(color.value);
+    setGrid(pixel);
     const colorElement = document.getElementById("color");
     let color = colorElement.value;
-    console.log(color.value);
-    setGrid(pixel,color);
+    let square = document.querySelectorAll(".square");
+    square.forEach( square => {
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = color;
+        });
+    })
+    // key.forEach(key => key.addEventListener("transitionend",removeTransition));
+    // square.addEventListener("mouseover", function (e) {
+    //     square.style.backgroundColor = color;
+    // });
 }
-function setGrid (pixel,color) {
+function setGrid (pixel) {
     let size = pixel;
     const container = document.querySelector(".screen");
     container.style.gridTemplateColumns = "repeat("+ size + ", 1fr)";
@@ -20,43 +30,43 @@ function setGrid (pixel,color) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             let square = document.createElement('div');
+            square.className = "square";
             square.style.width = 500/size + "px";
             square.style.height = 500/size + "px";
-            // square.style.backgroundColor = "#DEFBC2";
-            square.addEventListener("mouseover", function (e) {
-                square.style.backgroundColor = color;
-            });
+            square.style.backgroundColor = "#DEFBC2";
             container.appendChild(square);
         }
     }
 }
 function setColor () {
-    const container = document.querySelector(".screen");
     const colorPicker = document.querySelector("input[type=color]");
-    const pixel = document.getElementById("size").value;
-    colorPicker.addEventListener("change", function (e) {
-        while (container.hasChildNodes()) {
-        container.removeChild(container.firstChild);
-        }
-        // container.style.display = "none";
-        // container.style.display = "grid";
-        initContainer(pixel, this.value);
+    let square = document.querySelectorAll(".square");
+    square.forEach( square => {
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = colorPicker.value;
+        });
     });
+    // colorPicker.addEventListener("change", function (e) {
+    //     const square = document.querySelectorAll(".square");
+    //     square.addEventListener("mouseover", function (e) {
+    //         square.style.backgroundColor = colorPicker.value;
+    //     });
+    //     // container.style.display = "none";
+    //     // container.style.display = "grid";
+    // });
 };
 function setPixel() {
-    const color = document.getElementById("color").value;
     const container = document.querySelector(".screen");
     const pixel = document.querySelector("input[type=range]");
     pixel.addEventListener("change", function (e) {
         while (container.hasChildNodes()) {
             container.removeChild(container.firstChild);
             }
-        initContainer(this.value,color);
+        initContainer(this.value);
     })
 }
 initContainer();
 setColor();
-setPixel();
 // color.value
 
 
