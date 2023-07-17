@@ -63,10 +63,12 @@ function setPixel() {
             container.removeChild(container.firstChild);
             }
         initContainer(this.value);
+        setColor();
     })
 }
 initContainer();
 setColor();
+setPixel();
 // color.value
 
 
