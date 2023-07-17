@@ -69,6 +69,16 @@ function setPixel() {
 initContainer();
 setColor();
 setPixel();
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", function (e) {
+    let container = document.querySelector(".screen");
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+        }
+    const pixel = document.querySelector("input[type=range]").value;
+    initContainer(pixel);
+    setColor();
+});
 // color.value
 
 
